@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01C4237A159C034200A08AB3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C42379159C034200A08AB3 /* Cocoa.framework */; };
+		01C4237C159C034200A08AB3 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C4237B159C034200A08AB3 /* PreferencePanes.framework */; };
+		01C42386159C034200A08AB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01C42384159C034200A08AB3 /* InfoPlist.strings */; };
+		01C4238A159C034200A08AB3 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C42389159C034200A08AB3 /* Redis.m */; };
+		01C4238C159C034200A08AB3 /* Redis.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238B159C034200A08AB3 /* Redis.tiff */; };
+		01C4238F159C034200A08AB3 /* Redis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238D159C034200A08AB3 /* Redis.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01C42376159C034200A08AB3 /* Redis.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Redis.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		01C42379159C034200A08AB3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		01C4237B159C034200A08AB3 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		01C4237E159C034200A08AB3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		01C4237F159C034200A08AB3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		01C42380159C034200A08AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01C42383159C034200A08AB3 /* Redis-Info.plist */ = {isa = PBXFileReference; path = "Redis-Info.plist"; sourceTree = "<group>"; };
+		01C42385159C034200A08AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01C42387159C034200A08AB3 /* Redis-Prefix.pch */ = {isa = PBXFileReference; path = "Redis-Prefix.pch"; sourceTree = "<group>"; };
+		01C42388159C034200A08AB3 /* Redis.h */ = {isa = PBXFileReference; path = Redis.h; sourceTree = "<group>"; };
+		01C42389159C034200A08AB3 /* Redis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
+		01C4238B159C034200A08AB3 /* Redis.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Redis.tiff; sourceTree = "<group>"; };
+		01C4238E159C034200A08AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Redis.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01C42371159C034200A08AB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C4237A159C034200A08AB3 /* Cocoa.framework in Frameworks */,
+				01C4237C159C034200A08AB3 /* PreferencePanes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01C42369159C034200A08AB3 = {
+			isa = PBXGroup;
+			children = (
+				01C42381159C034200A08AB3 /* Redis */,
+				01C42378159C034200A08AB3 /* Frameworks */,
+				01C42377159C034200A08AB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01C42377159C034200A08AB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01C42376159C034200A08AB3 /* Redis.prefPane */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01C42378159C034200A08AB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01C42379159C034200A08AB3 /* Cocoa.framework */,
+				01C4237B159C034200A08AB3 /* PreferencePanes.framework */,
+				01C4237D159C034200A08AB3 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01C4237D159C034200A08AB3 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01C4237E159C034200A08AB3 /* AppKit.framework */,
+				01C4237F159C034200A08AB3 /* CoreData.framework */,
+				01C42380159C034200A08AB3 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		01C42381159C034200A08AB3 /* Redis */ = {
+			isa = PBXGroup;
+			children = (
+				01C42388159C034200A08AB3 /* Redis.h */,
+				01C42389159C034200A08AB3 /* Redis.m */,
+				01C4238B159C034200A08AB3 /* Redis.tiff */,
+				01C4238D159C034200A08AB3 /* Redis.xib */,
+				01C42382159C034200A08AB3 /* Supporting Files */,
+			);
+			path = Redis;
+			sourceTree = "<group>";
+		};
+		01C42382159C034200A08AB3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01C42383159C034200A08AB3 /* Redis-Info.plist */,
+				01C42384159C034200A08AB3 /* InfoPlist.strings */,
+				01C42387159C034200A08AB3 /* Redis-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01C42372159C034200A08AB3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01C42375159C034200A08AB3 /* Redis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01C42392159C034200A08AB3 /* Build configuration list for PBXNativeTarget "Redis" */;
+			buildPhases = (
+				01C42370159C034200A08AB3 /* Sources */,
+				01C42371159C034200A08AB3 /* Frameworks */,
+				01C42372159C034200A08AB3 /* Headers */,
+				01C42373159C034200A08AB3 /* Resources */,
+				01C42374159C034200A08AB3 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Redis;
+			productName = Redis;
+			productReference = 01C42376159C034200A08AB3 /* Redis.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01C4236B159C034200A08AB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 01C4236E159C034200A08AB3 /* Build configuration list for PBXProject "Redis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01C42369159C034200A08AB3;
+			productRefGroup = 01C42377159C034200A08AB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01C42375159C034200A08AB3 /* Redis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01C42373159C034200A08AB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C42386159C034200A08AB3 /* InfoPlist.strings in Resources */,
+				01C4238C159C034200A08AB3 /* Redis.tiff in Resources */,
+				01C4238F159C034200A08AB3 /* Redis.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		01C42374159C034200A08AB3 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01C42370159C034200A08AB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C4238A159C034200A08AB3 /* Redis.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		01C42384159C034200A08AB3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01C42385159C034200A08AB3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		01C4238D159C034200A08AB3 /* Redis.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01C4238E159C034200A08AB3 /* en */,
+			);
+			name = Redis.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01C42390159C034200A08AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		01C42391159C034200A08AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		01C42393159C034200A08AB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Redis/Redis-Prefix.pch";
+				INFOPLIST_FILE = "Redis/Redis-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		01C42394159C034200A08AB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Redis/Redis-Prefix.pch";
+				INFOPLIST_FILE = "Redis/Redis-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01C4236E159C034200A08AB3 /* Build configuration list for PBXProject "Redis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01C42390159C034200A08AB3 /* Debug */,
+				01C42391159C034200A08AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01C42392159C034200A08AB3 /* Build configuration list for PBXNativeTarget "Redis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01C42393159C034200A08AB3 /* Debug */,
+				01C42394159C034200A08AB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01C4236B159C034200A08AB3 /* Project object */;
+}
