@@ -13,6 +13,10 @@
 		01C4238A159C034200A08AB3 /* Redis.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C42389159C034200A08AB3 /* Redis.m */; };
 		01C4238C159C034200A08AB3 /* Redis.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238B159C034200A08AB3 /* Redis.tiff */; };
 		01C4238F159C034200A08AB3 /* Redis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238D159C034200A08AB3 /* Redis.xib */; };
+		01FCA5AA159C03E6002716AA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A6159C03E6002716AA /* logo.png */; };
+		01FCA5AB159C03E6002716AA /* redis_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A7159C03E6002716AA /* redis_icon.png */; };
+		01FCA5AC159C03E6002716AA /* started.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A8159C03E6002716AA /* started.png */; };
+		01FCA5AD159C03E6002716AA /* stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A9159C03E6002716AA /* stopped.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +26,17 @@
 		01C4237E159C034200A08AB3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		01C4237F159C034200A08AB3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		01C42380159C034200A08AB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		01C42383159C034200A08AB3 /* Redis-Info.plist */ = {isa = PBXFileReference; path = "Redis-Info.plist"; sourceTree = "<group>"; };
+		01C42383159C034200A08AB3 /* Redis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Redis-Info.plist"; sourceTree = "<group>"; };
 		01C42385159C034200A08AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		01C42387159C034200A08AB3 /* Redis-Prefix.pch */ = {isa = PBXFileReference; path = "Redis-Prefix.pch"; sourceTree = "<group>"; };
-		01C42388159C034200A08AB3 /* Redis.h */ = {isa = PBXFileReference; path = Redis.h; sourceTree = "<group>"; };
+		01C42387159C034200A08AB3 /* Redis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Redis-Prefix.pch"; sourceTree = "<group>"; };
+		01C42388159C034200A08AB3 /* Redis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Redis.h; sourceTree = "<group>"; };
 		01C42389159C034200A08AB3 /* Redis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Redis.m; sourceTree = "<group>"; };
 		01C4238B159C034200A08AB3 /* Redis.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Redis.tiff; sourceTree = "<group>"; };
 		01C4238E159C034200A08AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Redis.xib; sourceTree = "<group>"; };
+		01FCA5A6159C03E6002716AA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		01FCA5A7159C03E6002716AA /* redis_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redis_icon.png; sourceTree = "<group>"; };
+		01FCA5A8159C03E6002716AA /* started.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = started.png; sourceTree = "<group>"; };
+		01FCA5A9159C03E6002716AA /* stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopped.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,10 @@
 		01C42382159C034200A08AB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01FCA5A6159C03E6002716AA /* logo.png */,
+				01FCA5A7159C03E6002716AA /* redis_icon.png */,
+				01FCA5A8159C03E6002716AA /* started.png */,
+				01FCA5A9159C03E6002716AA /* stopped.png */,
 				01C42383159C034200A08AB3 /* Redis-Info.plist */,
 				01C42384159C034200A08AB3 /* InfoPlist.strings */,
 				01C42387159C034200A08AB3 /* Redis-Prefix.pch */,
@@ -168,6 +180,10 @@
 				01C42386159C034200A08AB3 /* InfoPlist.strings in Resources */,
 				01C4238C159C034200A08AB3 /* Redis.tiff in Resources */,
 				01C4238F159C034200A08AB3 /* Redis.xib in Resources */,
+				01FCA5AA159C03E6002716AA /* logo.png in Resources */,
+				01FCA5AB159C03E6002716AA /* redis_icon.png in Resources */,
+				01FCA5AC159C03E6002716AA /* started.png in Resources */,
+				01FCA5AD159C03E6002716AA /* stopped.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +320,7 @@
 				01C42394159C034200A08AB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
