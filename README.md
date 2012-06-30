@@ -9,7 +9,7 @@ Enabling and Disabling the auto-start option when your computer boots up.
 
 ## Screenshot
 
-![prefPane screenshot](https://github.com/duqimper/Redis.prefPane/raw/master/Redis.prefPane.png)
+![prefPane screenshot](https://github.com/dquimper/Redis.prefPane/raw/master/Redis.prefPane.png)
 
 ## Installation
 
@@ -22,7 +22,8 @@ Enabling and Disabling the auto-start option when your computer boots up.
 	1. find the line with `daemonize no`
 	1. change it to `daemonize yes`
 1. Download the prefPane or clone and compile it yourself.
-	1. [Redis.prefPane](https://github.com/duqimper/Redis.prefPane/raw/master/Redis.prefPane)
+	1. Download: [Redis.prefPane](https://github.com/dquimper/Redis.prefPane/raw/master/Redis.prefPane.zip)
+	1. Git clone: `git clone git://github.com/dquimper/Redis.prefPane.git`
 
 ## License
 
