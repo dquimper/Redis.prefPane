@@ -37,7 +37,7 @@ The source code for the pref pane is Open Source under MIT License. See the LICE
 
 This is my first MacOSX application and my first experience with Objective-C.
 
-This project was created to mimic the mySQL Preference pane that you get from downloading the mySQL tarball. The code is shamelessly copied and adapted from the [pgane](https://github.com/jwang/pgpane) project by John Wang (a Postgres prefPane).
+This project was created to mimic the mySQL Preference pane that you get from downloading the mySQL tarball. The code is shamelessly copied and adapted from the [pgpane](https://github.com/jwang/pgpane) project by John Wang (a Postgres prefPane).
 
 It was created to help non-technical people in getting their Ruby on Rails system set up with Redis, and are not too familiar with the Terminal app and unix commands.
 
