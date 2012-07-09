@@ -236,7 +236,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="115317164">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">stopped</string>
+								<string key="NSContents">...</string>
 								<reference key="NSSupport" ref="959391415"/>
 								<reference key="NSControlView" ref="854981361"/>
 								<reference key="NSBackgroundColor" ref="589358318"/>
