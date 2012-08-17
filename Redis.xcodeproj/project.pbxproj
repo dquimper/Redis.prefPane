@@ -14,7 +14,6 @@
 		01C4238C159C034200A08AB3 /* Redis.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238B159C034200A08AB3 /* Redis.tiff */; };
 		01C4238F159C034200A08AB3 /* Redis.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C4238D159C034200A08AB3 /* Redis.xib */; };
 		01FCA5AA159C03E6002716AA /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A6159C03E6002716AA /* logo.png */; };
-		01FCA5AB159C03E6002716AA /* redis_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A7159C03E6002716AA /* redis_icon.png */; };
 		01FCA5AC159C03E6002716AA /* started.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A8159C03E6002716AA /* started.png */; };
 		01FCA5AD159C03E6002716AA /* stopped.png in Resources */ = {isa = PBXBuildFile; fileRef = 01FCA5A9159C03E6002716AA /* stopped.png */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		01C4238B159C034200A08AB3 /* Redis.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Redis.tiff; sourceTree = "<group>"; };
 		01C4238E159C034200A08AB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Redis.xib; sourceTree = "<group>"; };
 		01FCA5A6159C03E6002716AA /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		01FCA5A7159C03E6002716AA /* redis_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redis_icon.png; sourceTree = "<group>"; };
 		01FCA5A8159C03E6002716AA /* started.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = started.png; sourceTree = "<group>"; };
 		01FCA5A9159C03E6002716AA /* stopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopped.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				01FCA5A6159C03E6002716AA /* logo.png */,
-				01FCA5A7159C03E6002716AA /* redis_icon.png */,
 				01FCA5A8159C03E6002716AA /* started.png */,
 				01FCA5A9159C03E6002716AA /* stopped.png */,
 				01C42383159C034200A08AB3 /* Redis-Info.plist */,
@@ -181,7 +178,6 @@
 				01C4238C159C034200A08AB3 /* Redis.tiff in Resources */,
 				01C4238F159C034200A08AB3 /* Redis.xib in Resources */,
 				01FCA5AA159C03E6002716AA /* logo.png in Resources */,
-				01FCA5AB159C03E6002716AA /* redis_icon.png in Resources */,
 				01FCA5AC159C03E6002716AA /* started.png in Resources */,
 				01FCA5AD159C03E6002716AA /* stopped.png in Resources */,
 			);
