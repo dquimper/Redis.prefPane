@@ -12,35 +12,35 @@
 @interface Redis : NSPreferencePane {
 @private
     NSString *_path;
-    NSButton *_startButton;
-    NSTextField *_statusLabel;
-    NSButton *_autoStartCheckBox;
-    NSTextField *_detailInformationText;
-    NSProgressIndicator *_progressIndicator;
+    NSButton *__strong _startButton;
+    NSTextField *__strong _statusLabel;
+    NSButton *__strong _autoStartCheckBox;
+    NSTextField *__strong _detailInformationText;
+    NSProgressIndicator *__strong _progressIndicator;
     
     NSString *_redis_cli;
     NSString *_redis_server;
     NSString *_redis_conf;
     NSString *_launchctl;
-    NSTextField *_startedSubtext;
-    NSImageView *_statusImage;
+    NSTextField *__strong _startedSubtext;
+    NSImageView *__strong _statusImage;
     
     BOOL _isRunning;
     
 }
 
-@property(nonatomic, retain) NSString *path;
-@property (assign) IBOutlet NSButton *startButton;
-@property (assign) IBOutlet NSTextField *statusLabel;
-@property (assign) IBOutlet NSButton *autoStartCheckBox;
-@property (assign) IBOutlet NSTextField *detailInformationText;
-@property (assign) IBOutlet NSProgressIndicator *progressIndicator;
-@property (nonatomic, retain) NSString *redis_cli;
-@property (nonatomic, retain) NSString *redis_server;
-@property (nonatomic, retain) NSString *redis_conf;
-@property (nonatomic, retain) NSString *launchctl;
-@property (assign) IBOutlet NSTextField *startedSubtext;
-@property (assign) IBOutlet NSImageView *statusImage;
+@property(nonatomic, strong) NSString *path;
+@property (strong) IBOutlet NSButton *startButton;
+@property (strong) IBOutlet NSTextField *statusLabel;
+@property (strong) IBOutlet NSButton *autoStartCheckBox;
+@property (strong) IBOutlet NSTextField *detailInformationText;
+@property (strong) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, strong) NSString *redis_cli;
+@property (nonatomic, strong) NSString *redis_server;
+@property (nonatomic, strong) NSString *redis_conf;
+@property (nonatomic, strong) NSString *launchctl;
+@property (strong) IBOutlet NSTextField *startedSubtext;
+@property (strong) IBOutlet NSImageView *statusImage;
 
 - (void)mainViewDidLoad;
 - (IBAction)startStopServer:(id)sender;
