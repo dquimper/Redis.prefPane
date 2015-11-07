@@ -39,17 +39,17 @@
     
     if (_isRunning) {
         (self.startButton).title = @"Stop Redis Server";
-        [self.detailInformationText setTitleWithMnemonic:@"The Redis Database Server is started and ready for client connections. To shut the Server down, use the \"Stop Redis Server\" button."];
+        [self.detailInformationText setStringValue:@"The Redis Database Server is started and ready for client connections. To shut the Server down, use the \"Stop Redis Server\" button."];
         (self.statusLabel).textColor = [NSColor greenColor];
-        [self.statusLabel setTitleWithMnemonic:@"Running"];
+        [self.statusLabel setStringValue:@"Running"];
         [self.startedSubtext setHidden:NO];
         (self.statusImage).image = started; 
         
     }
     else {
         (self.startButton).title = @"Start Redis Server";
-        [self.detailInformationText setTitleWithMnemonic:@"The Redis Database Server is currently stopped. To start it, use the \"Start Redis Server\" button."];
-        [self.statusLabel setTitleWithMnemonic:@"Stopped"];
+        [self.detailInformationText setStringValue:@"The Redis Database Server is currently stopped. To start it, use the \"Start Redis Server\" button."];
+        [self.statusLabel setStringValue:@"Stopped"];
         (self.statusLabel).textColor = [NSColor redColor];
         [self.startedSubtext setHidden:YES];
         (self.statusImage).image = stopped;
