@@ -31,31 +31,29 @@
 @synthesize statusImage = _statusImage;
 
 - (void)updateChrome {
-    NSString *startedPath = [[self bundle] pathForResource:@"started" ofType:@"png"];
+    NSString *startedPath = [self.bundle pathForResource:@"started" ofType:@"png"];
     NSImage *started = [[NSImage alloc] initWithContentsOfFile:startedPath];
     
-    NSString *stoppedPath = [[self bundle] pathForResource:@"stopped" ofType:@"png"];
+    NSString *stoppedPath = [self.bundle pathForResource:@"stopped" ofType:@"png"];
     NSImage *stopped = [[NSImage alloc] initWithContentsOfFile:stoppedPath];
     
     if (_isRunning) {
-        [self.startButton setTitle:@"Stop Redis Server"];
-        [self.detailInformationText setTitleWithMnemonic:@"The Redis Database Server is started and ready for client connections. To shut the Server down, use the \"Stop Redis Server\" button."];
-        [self.statusLabel setTextColor:[NSColor greenColor]];
-        [self.statusLabel setTitleWithMnemonic:@"Running"];
+        (self.startButton).title = @"Stop Redis Server";
+        [self.detailInformationText setStringValue:@"The Redis Database Server is started and ready for client connections. To shut the Server down, use the \"Stop Redis Server\" button."];
+        (self.statusLabel).textColor = [NSColor greenColor];
+        [self.statusLabel setStringValue:@"Running"];
         [self.startedSubtext setHidden:NO];
-        [self.statusImage setImage:started]; 
+        (self.statusImage).image = started; 
         
     }
     else {
-        [self.startButton setTitle:@"Start Redis Server"];
-        [self.detailInformationText setTitleWithMnemonic:@"The Redis Database Server is currently stopped. To start it, use the \"Start Redis Server\" button."];
-        [self.statusLabel setTitleWithMnemonic:@"Stopped"];
-        [self.statusLabel setTextColor:[NSColor redColor]];
+        (self.startButton).title = @"Start Redis Server";
+        [self.detailInformationText setStringValue:@"The Redis Database Server is currently stopped. To start it, use the \"Start Redis Server\" button."];
+        [self.statusLabel setStringValue:@"Stopped"];
+        (self.statusLabel).textColor = [NSColor redColor];
         [self.startedSubtext setHidden:YES];
-        [self.statusImage setImage:stopped];
+        (self.statusImage).image = stopped;
     }
-    [started release];
-    [stopped release];
     [self.progressIndicator stopAnimation:self];
 }
 
@@ -63,17 +61,17 @@
     
     NSTask *task;
     task = [[NSTask alloc] init];
-    [task setLaunchPath:command];
-    [task setArguments: args];
+    task.launchPath = command;
+    task.arguments = args;
     
     NSPipe *pipe;
     pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
+    task.standardOutput = pipe;
     //The magic line that keeps your log where it belongs
-    [task setStandardInput:[NSPipe pipe]];
+    task.standardInput = [NSPipe pipe];
     
     NSFileHandle *file;
-    file = [pipe fileHandleForReading];
+    file = pipe.fileHandleForReading;
     
     [task launch];
     
@@ -87,7 +85,6 @@
     NSString *string;
     string = [[NSString alloc] initWithData: data
                                    encoding: NSUTF8StringEncoding];
-    [task release];
     return string;    
 }
 
@@ -101,7 +98,7 @@
 ////////////////////////////////////////////////////////////////////////////
 - (void)checkServerStatus {
     // Find out if Redis server is running
-    NSArray *args = [NSArray arrayWithObjects: @"PING", nil];
+    NSArray *args = @[@"PING"];
     NSString *result = [self runCLICommand:self.redis_cli arguments:args];
     if ([result rangeOfString:@"PONG"].location != NSNotFound) {
         _isRunning = YES;        
@@ -112,14 +109,14 @@
     
     // Set the running/stopped label and set the button text to correct
     // Check if Auto-start is enabled and set checkbox accordingly
-    args = [NSArray arrayWithObjects:@"list",@"homebrew.mxcl.redis", nil];
+    args = @[@"list",@"homebrew.mxcl.redis"];
     NSString *autoS = [self runCLICommand:LAUNCHCTL arguments:args waitUntilExit:NO];
     
-    if ([autoS length] == 0 || [autoS isEqualToString:@"launchctl list returned unknown response"]) {
-        [self.autoStartCheckBox setState:0];
+    if (autoS.length == 0 || [autoS isEqualToString:@"launchctl list returned unknown response"]) {
+        (self.autoStartCheckBox).state = 0;
     }
     else {
-        [self.autoStartCheckBox setState:1];
+        (self.autoStartCheckBox).state = 1;
     }
     
     [self performSelectorOnMainThread:@selector(updateChrome) withObject:nil waitUntilDone:NO];
@@ -130,26 +127,27 @@
     NSArray *args = nil;
     
     args = [NSArray arrayWithObjects: LAUNCHCTL, nil];
-    self.launchctl = [self runCLICommand:WHICH arguments:args];    
+    self.launchctl = [self runCLICommand:WHICH arguments:args];
     self.launchctl = [self.launchctl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
-    args = [NSArray arrayWithObjects:@"/usr/local",@"-type", @"f", @"-name", REDIS_CLI, nil];
+  
+    args = [NSArray arrayWithObjects:@"/usr/local/Cellar",@"-type", @"f", @"-name", REDIS_CLI, nil];
     self.redis_cli = [self runCLICommand:FIND arguments:args];
     self.redis_cli = [self.redis_cli stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    args = [NSArray arrayWithObjects:@"/usr/local",@"-type", @"f", @"-name", REDIS_SERVER, nil];
+  
+  
+    args = [NSArray arrayWithObjects:@"/usr/local/Cellar",@"-type", @"f", @"-name", REDIS_SERVER, nil];
     self.redis_server = [self runCLICommand:FIND arguments:args];
     self.redis_server = [self.redis_server stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    args = [NSArray arrayWithObjects:@"/usr/local",@"-type", @"f", @"-name", @"redis.conf", nil];
+  
+    args = [NSArray arrayWithObjects:@"/usr/local/etc",@"-type", @"f", @"-name", @"redis.conf", nil];
     self.redis_conf = [self runCLICommand:FIND arguments:args];
     self.redis_conf = [self.redis_conf stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
+  
 //    [self.startButton setTitle:self.redis_cli];
 //    [self.detailInformationText setTitleWithMnemonic:self.redis_server];
 
     // Don't proceed. Disable everything.
-    if ([self.redis_cli length] == 0) {
+    if ((self.redis_cli).length == 0) {
         [self.startButton setEnabled:NO];
         [self.autoStartCheckBox setEnabled:NO];
     }
@@ -180,13 +178,13 @@
     
     NSArray *args = nil;
     if(_isRunning) {
-        [self.startButton setTitle:@"Stop Redis Server"];
-        args = [NSArray arrayWithObjects: @"shutdown", nil];
+        (self.startButton).title = @"Stop Redis Server";
+        args = @[@"shutdown"];
         [self runCLICommand:self.redis_cli arguments:args waitUntilExit:YES];
     }
     else {
-        [self.startButton setTitle:@"Start Redis Server"];
-        args = [NSArray arrayWithObjects: self.redis_conf, nil];        
+        (self.startButton).title = @"Start Redis Server";
+        args = @[self.redis_conf];        
         [self runCLICommand:self.redis_server arguments:args waitUntilExit:YES];
     }
     
@@ -204,28 +202,21 @@
     
     [self.progressIndicator startAnimation:self];
     
-    NSString *plist = [@"~/Library/LaunchAgents/homebrew.mxcl.redis.plist" stringByExpandingTildeInPath];
+    NSString *plist = (@"~/Library/LaunchAgents/homebrew.mxcl.redis.plist").stringByExpandingTildeInPath;
     
-    if ([self.autoStartCheckBox state] == 0) {        
+    if ((self.autoStartCheckBox).state == 0) {        
         // launchctl unload -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
-        args = [NSArray arrayWithObjects:@"unload", @"-w", plist, nil];
+        args = @[@"unload", @"-w", plist];
         [self runCLICommand:self.launchctl arguments:args];
         
     } else {
         // launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
-        args = [NSArray arrayWithObjects:@"load", @"-w", plist, nil];
+        args = @[@"load", @"-w", plist];
         [self runCLICommand:self.launchctl arguments:args];
     }
     // update the chrome after done
     [self performSelector:@selector(checkServerStatus) withObject:nil afterDelay:3.0];
 }
 
-- (void)dealloc {
-    [_redis_cli release];
-    [_redis_server release];
-    [_redis_conf release];
-    [_launchctl release];
-    [super dealloc];
-}
 
 @end
