@@ -22,6 +22,7 @@
     NSString *_redis_server;
     NSString *_redis_conf;
     NSString *_launchctl;
+    NSString *_brew_prefix;
     NSTextField *__strong _startedSubtext;
     NSImageView *__strong _statusImage;
     
@@ -38,6 +39,7 @@
 @property (nonatomic, strong) NSString *redis_cli;
 @property (nonatomic, strong) NSString *redis_server;
 @property (nonatomic, strong) NSString *redis_conf;
+@property (nonatomic, strong) NSString *brew_prefix;
 @property (nonatomic, strong) NSString *launchctl;
 @property (strong) IBOutlet NSTextField *startedSubtext;
 @property (strong) IBOutlet NSImageView *statusImage;
