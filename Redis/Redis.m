@@ -26,6 +26,7 @@
 @synthesize redis_cli = _redis_cli;
 @synthesize redis_server = _redis_server;
 @synthesize redis_conf = _redis_conf;
+@synthesize brew_prefix = _brew_prefix;
 @synthesize launchctl = _launchctl;
 @synthesize startedSubtext = _startedSubtext;
 @synthesize statusImage = _statusImage;
@@ -125,21 +126,28 @@
 
 - (void)startup {
     NSArray *args = nil;
+
+    NSFileManager *fm = [[NSFileManager alloc] init];
+    BOOL isDir;
+    if ([fm fileExistsAtPath:@"/opt/homebrew" isDirectory:&isDir] ) {
+        self.brew_prefix = @"/opt/homebrew";
+    } else {
+        self.brew_prefix = @"/usr/local";
+    }
     
     args = [NSArray arrayWithObjects: LAUNCHCTL, nil];
     self.launchctl = [self runCLICommand:WHICH arguments:args];
     self.launchctl = [self.launchctl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   
-    args = [NSArray arrayWithObjects:@"/usr/local/Cellar",@"-type", @"f", @"-name", REDIS_CLI, nil];
+    args = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%@/Cellar", self.brew_prefix],@"-type", @"f", @"-name", REDIS_CLI, nil];
     self.redis_cli = [self runCLICommand:FIND arguments:args];
     self.redis_cli = [self.redis_cli stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   
-  
-    args = [NSArray arrayWithObjects:@"/usr/local/Cellar",@"-type", @"f", @"-name", REDIS_SERVER, nil];
+    args = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%@/Cellar", self.brew_prefix] ,@"-type", @"f", @"-name", REDIS_SERVER, nil];
     self.redis_server = [self runCLICommand:FIND arguments:args];
     self.redis_server = [self.redis_server stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   
-    args = [NSArray arrayWithObjects:@"/usr/local/etc",@"-type", @"f", @"-name", @"redis.conf", nil];
+    args = [NSArray arrayWithObjects:[NSString stringWithFormat:@"%@/etc", self.brew_prefix],@"-type", @"f", @"-name", @"redis.conf", nil];
     self.redis_conf = [self runCLICommand:FIND arguments:args];
     self.redis_conf = [self.redis_conf stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
   
